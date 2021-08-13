@@ -16,6 +16,6 @@ use App\Http\Controllers\LexicoController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('inicio');
 
 Route::post('/lexica',[LexicoController::class, 'mimificarCodigo'])->name('lexico');

@@ -86,8 +86,18 @@
         </div>
        
         <!-- Code Editor Start -->
+<main>
         <div class="code-editor-area mg-b-15">
             <div class="container-fluid">
+                
+                @if (session('msg'))
+                <div class="alert alert-danger">
+                    <ul>
+                            <li>{{ session('msg') }}</li>
+                       
+                    </ul>
+                </div>
+            @endif
                 <div class="row">
                     <div class="col-lg-10 col-md-6 col-sm-6 col-xs-12">
                         <div class="code-editor-single responsive-mg-b-30">
@@ -108,7 +118,7 @@
                 </div>
             </div>
         </div>
-        
+    </main>    
     </div>
 
     <!-- jquery

@@ -24,6 +24,10 @@ class LexicoController extends Controller
 
     public function mimificarCodigo(Request $request){
         $analizadorSintactico = new SintacticoController();
-        return $analizadorSintactico->verificarSintaxe($this->divLinhas($this->removeCaracteres($request->codigo)));
+        if($analizadorSintactico->verificarSintaxe($this->divLinhas($this->removeCaracteres($request->codigo)))){
+            return redirect('/')->with('msg',$analizadorSintactico->verificarSintaxe($this->divLinhas($this->removeCaracteres($request->codigo))));
+        }
+        
+        return ;
     }
 }
